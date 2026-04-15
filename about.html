@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About – LLMPersonality</title>
+  <meta name="description" content="Learn about the LLMPersonality framework, its goals, and how to contribute.">
+  
+  <!-- Skip link for keyboard accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Root-relative base for sub-path compatibility -->
+  <base href="./">
+  
+  <!-- Zero-FOUC Theme + Contrast Preloader -->
+  <script>
+    (function() {
+      var storedTheme = localStorage.getItem('theme_v1');
+      var storedContrast = localStorage.getItem('contrast_v1');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = (storedTheme === 'dark' || storedTheme === 'light') ? storedTheme : (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      if (storedContrast === 'high') {
+        document.documentElement.setAttribute('data-contrast', 'high');
+      }
+    })();
+  </script>
+  
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">LLMPersonality</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="agents.html" class="nav-link">Agents</a></li>
+        <li><a href="about.html" class="nav-link active">About</a></li>
+      </ul>
+      <div class="nav-toggles">
+        <button id="contrast-toggle" class="nav-toggle" aria-label="Toggle high contrast mode" title="High contrast">
+          <span class="toggle-icon">◐</span>
+        </button>
+        <button id="theme-toggle" class="nav-toggle" aria-label="Toggle dark/light mode" title="Dark mode">
+          <span class="toggle-icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="about-main container">
+    <section class="about-intro">
+      <h1 class="page-title reveal">About LLMPersonality</h1>
+      <p class="page-desc reveal">An open-source framework for orchestrating multi-agent discussions using LLMs with distinct personalities and roles.</p>
+    </section>
+
+    <section class="about-mission">
+      <h2 class="section-title reveal">Our Mission</h2>
+      <div class="content-block reveal">
+        <p>LLMPersonality enables more effective human-AI collaboration by structuring discussions around distinct agent personas. Each agent brings a unique perspective, ensuring discussions are thorough, balanced, and actionable.</p>
+        <p>Rather than relying on a single LLM to navigate complex decisions, the framework orchestrates multiple agents that challenge, refine, and build upon each other's contributions.</p>
+      </div>
+    </section>
+
+    <section class="about-how">
+      <h2 class="section-title reveal">How It Works</h2>
+      <div class="content-block reveal">
+        <p>The framework operates through a structured loop:</p>
+        <ol class="process-list">
+          <li><strong>Clarify</strong> – Define the problem and establish shared understanding.</li>
+          <li><strong>Explore</strong> – Generate diverse perspectives and expand the solution space.</li>
+          <li><strong>Narrow</strong> – Weigh trade‑offs and converge on viable options.</li>
+          <li><strong>Execute</strong> – Translate decisions into concrete deliverables.</li>
+        </ol>
+        <p>A human Moderator guides the process, while specialized agents contribute their unique strengths at each phase.</p>
+      </div>
+    </section>
+
+    <section class="about-contribute">
+      <h2 class="section-title reveal">Contributing</h2>
+      <div class="content-block reveal">
+        <p>LLMPersonality is open-source and welcomes contributions:</p>
+        <ul class="contrib-list">
+          <li>Submit agent personality profiles and example interactions</li>
+          <li>Improve the orchestration logic and phase transitions</li>
+          <li>Enhance the documentation and examples</li>
+          <li>Report issues and suggest new agent roles</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about-license">
+      <h2 class="section-title reveal">License</h2>
+      <div class="content-block reveal">
+        <p>This project is released under the MIT License. See the LICENSE file for details.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 LLMPersonality. Open-source under MIT License.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

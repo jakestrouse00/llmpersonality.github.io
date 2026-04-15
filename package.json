@@ -1,0 +1,13 @@
+{
+  "name": "llmpersonality-website",
+  "version": "1.0.0",
+  "description": "Multi-page website for the LLMPersonality multi-agent discussion framework",
+  "private": true,
+  "devDependencies": {
+    "jsdom": "^22.0.0"
+  },
+  "scripts": {
+    "guardrails": "./ci/run-guardrails.sh",
+    "serve": "npx serve ."
+  }
+}

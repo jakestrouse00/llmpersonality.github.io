@@ -1,0 +1,96 @@
+/*
+ * reset.css - Minimal CSS reset
+ * Normalizes box-sizing, margins, and base element styles.
+ */
+
+/* === Box Model === */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* === Margin Reset === */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* === HTML & Body === */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+}
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--leading-tight);
+  font-weight: var(--font-bold);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* === Lists === */
+ul, ol {
+  list-style: none;
+}
+
+/* === Links === */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* === Focus Styles === */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* === Images === */
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === Buttons === */
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* === Forms === */
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* === Tables === */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}

@@ -3,213 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="LLMPersonality — An open-source multi-agent discussion framework where AI personalities collaborate through Clarify, Explore, Narrow, and Execute phases to produce better outcomes.">
-  <meta name="keywords" content="multi-agent, AI discussion, LLM orchestration, agent personalities, collaborative AI">
-  <meta name="theme-color" content="#3b82f6">
-  <meta property="og:title" content="LLMPersonality — Multi-Agent Discussion Framework">
-  <meta property="og:description" content="Watch AI personalities with distinct roles collaborate through structured phases to produce better outcomes than any single agent alone.">
-  <meta property="og:type" content="website">
-  <title>LLMPersonality — Multi-Agent Discussion Framework</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <title>LLMPersonality – Multi-Agent Discussion Framework</title>
+  <meta name="description" content="An open-source framework for orchestrating multi-agent discussions with distinct personalities.">
+  
+  <!-- Skip link for keyboard accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Root-relative base for sub-path compatibility -->
+  <base href="./">
+  
+  <!-- Zero-FOUC Theme + Contrast Preloader (must run before any stylesheet) -->
+  <script>
+    (function() {
+      var storedTheme = localStorage.getItem('theme_v1');
+      var storedContrast = localStorage.getItem('contrast_v1');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = (storedTheme === 'dark' || storedTheme === 'light') ? storedTheme : (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      if (storedContrast === 'high') {
+        document.documentElement.setAttribute('data-contrast', 'high');
+      }
+    })();
+  </script>
+  
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__brand" aria-label="LLMPersonality Home">
-        <span class="nav__brand-icon">🧠</span>
-        <span class="nav__brand-text">LLMPersonality</span>
-      </a>
-      <div class="nav__links" role="menubar">
-        <a href="index.html" class="nav__link" role="menuitem">Home</a>
-        <a href="loop.html" class="nav__link" role="menuitem">The Loop</a>
-        <a href="agents.html" class="nav__link" role="menuitem">Agents</a>
-      </div>
-      <div class="nav__actions">
-        <button class="theme-toggle" aria-label="Toggle dark/light mode" type="button">
-          <span class="theme-toggle__icon theme-toggle__icon--light">🌙</span>
-          <span class="theme-toggle__icon theme-toggle__icon--dark">☀️</span>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">LLMPersonality</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="agents.html" class="nav-link">Agents</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+      <div class="nav-toggles">
+        <button id="contrast-toggle" class="nav-toggle" aria-label="Toggle high contrast mode" title="High contrast">
+          <span class="toggle-icon">◐</span>
         </button>
-        <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button id="theme-toggle" class="nav-toggle" aria-label="Toggle dark/light mode" title="Dark mode">
+          <span class="toggle-icon">🌙</span>
         </button>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container hero__content">
-        <div class="hero__badge fade-in">
-          <span>🚀</span> Open-Source Multi-Agent Framework
+  <main id="main-content">
+    <section class="hero container">
+      <h1 class="hero-title reveal">Multi-Agent Discussion, Reimagined</h1>
+      <p class="hero-subtitle reveal">An open-source framework that orchestrates LLM agents with distinct personalities to navigate complex discussions through structured phases.</p>
+      <div class="hero-actions reveal">
+        <a href="agents.html" class="btn btn-primary">Explore Agents</a>
+        <a href="about.html" class="btn btn-secondary">Learn More</a>
+      </div>
+    </section>
+
+    <section class="loop-section container">
+      <h2 class="section-title reveal">The Orchestration Loop</h2>
+      <p class="section-desc reveal">Every discussion moves through four phases, with the Moderator ensuring productive flow.</p>
+      
+      <div class="loop-phases">
+        <div class="phase-card reveal">
+          <div class="phase-icon">💬</div>
+          <h3>Clarify</h3>
+          <p>Define the problem, surface assumptions, and establish shared understanding.</p>
         </div>
-        <h1 class="hero__title fade-in">
-          Six AI Personalities.<br>
-          <span class="hero__title-accent">One Structured Discussion.</span>
-        </h1>
-        <p class="hero__subtitle fade-in">
-          LLMPersonality orchestrates AI agents with distinct roles and personalities through a structured four-phase loop — producing better outcomes than any single agent alone.
-        </p>
-        <div class="hero__actions fade-in">
-          <a href="loop.html" class="btn btn--primary">See How It Works →</a>
-          <a href="agents.html" class="btn btn--secondary">Meet the Agents</a>
+        <div class="phase-card reveal">
+          <div class="phase-icon">🔍</div>
+          <h3>Explore</h3>
+          <p>Generate diverse perspectives, probe edge cases, and expand the solution space.</p>
+        </div>
+        <div class="phase-card reveal">
+          <div class="phase-icon">⚖️</div>
+          <h3>Narrow</h3>
+          <p>Weigh trade‑offs, converge on options, and build consensus.</p>
+        </div>
+        <div class="phase-card reveal">
+          <div class="phase-icon">🚀</div>
+          <h3>Execute</h3>
+          <p>Translate decisions into concrete deliverables with clear ownership.</p>
         </div>
       </div>
     </section>
 
-    <!-- The Four Phases -->
-    <section class="section section--alt" id="phases">
-      <div class="container">
-        <div class="section__header">
-          <span class="section__tag fade-in">The Orchestration Loop</span>
-          <h2 class="section__title fade-in">Four Phases. Zero Ambiguity.</h2>
-          <p class="section__subtitle fade-in">Every discussion follows the same proven structure — from chaos to clarity to concrete deliverables.</p>
+    <section class="agents-preview container">
+      <h2 class="section-title reveal">Meet the Agents</h2>
+      <p class="section-desc reveal">Six distinct personas, each contributing unique value to the discussion.</p>
+      
+      <div class="agent-preview-grid reveal">
+        <div class="agent-preview-card">
+          <h4>Moderator</h4>
+          <p>Guides the flow, enforces process, keeps discussion on track.</p>
         </div>
-        <div class="phases-grid">
-          <div class="phase-card fade-in">
-            <div class="phase-card__number">1</div>
-            <h3 class="phase-card__title">Clarify</h3>
-            <p class="phase-card__desc">Establish shared understanding. Surface constraints, define success, and eliminate ambiguity before any solution is proposed.</p>
-          </div>
-          <div class="phase-card fade-in">
-            <div class="phase-card__number">2</div>
-            <h3 class="phase-card__title">Explore</h3>
-            <p class="phase-card__desc">Generate a wide range of ideas. Encourage divergent thinking — no approach is too unconventional at this stage.</p>
-          </div>
-          <div class="phase-card fade-in">
-            <div class="phase-card__number">3</div>
-            <h3 class="phase-card__title">Narrow</h3>
-            <p class="phase-card__desc">Converge on the best approach. Stress-test proposals against constraints, risks, and implementation reality.</p>
-          </div>
-          <div class="phase-card fade-in">
-            <div class="phase-card__number">4</div>
-            <h3 class="phase-card__title">Execute</h3>
-            <p class="phase-card__desc">Produce the concrete deliverable. Review for completeness, correctness, and readiness for sign-off.</p>
-          </div>
+        <div class="agent-preview-card">
+          <h4>Pragmatist</h4>
+          <p>Turns ideas into actionable plans, drafts concrete deliverables.</p>
         </div>
-      </div>
-    </section>
-
-    <!-- Why Multi-Agent? -->
-    <section class="section" id="why">
-      <div class="container">
-        <div class="section__header">
-          <span class="section__tag fade-in">Why Multi-Agent?</span>
-          <h2 class="section__title fade-in">Diversity of Thought, Deliberately Structured</h2>
-          <p class="section__subtitle fade-in">A single LLM can answer a question. Six coordinated personalities can solve a problem.</p>
+        <div class="agent-preview-card">
+          <h4>Creative</h4>
+          <p>Generates possibilities, explores unconventional angles.</p>
         </div>
-        <div class="features-grid">
-          <div class="feature-card fade-in">
-            <div class="feature-card__icon">🎭</div>
-            <h3 class="feature-card__title">Distinct Personalities</h3>
-            <p class="feature-card__desc">Each agent has a unique role, mindset, and communication style — from the Creative's wild ideas to the Cynical's rigorous stress-tests.</p>
-          </div>
-          <div class="feature-card fade-in">
-            <div class="feature-card__icon">🔄</div>
-            <h3 class="feature-card__title">Structured Phases</h3>
-            <p class="feature-card__desc">The four-phase loop prevents meandering. Every discussion moves from understanding to exploration to decision to delivery — predictably.</p>
-          </div>
-          <div class="feature-card fade-in">
-            <div class="feature-card__icon">⚖️</div>
-            <h3 class="feature-card__title">Built-in Checks</h3>
-            <p class="feature-card__desc">The Cynical challenges assumptions. The Provocateur breaks groupthink. The Librarian grounds claims in evidence. No single bias dominates.</p>
-          </div>
-          <div class="feature-card fade-in">
-            <div class="feature-card__icon">🔧</div>
-            <h3 class="feature-card__title">Concrete Outputs</h3>
-            <p class="feature-card__desc">Discussions don't just produce opinions — they produce artifacts. Code, documentation, decisions. The Pragmatist ensures something real ships.</p>
-          </div>
-          <div class="feature-card fade-in">
-            <div class="feature-card__icon">🧩</div>
-            <h3 class="feature-card__title">Modular Design</h3>
-            <p class="feature-card__desc">Add, remove, or customize agents without rearchitecting the system. The framework adapts to your team's needs, not the other way around.</p>
-          </div>
-          <div class="feature-card fade-in">
-            <div class="feature-card__icon">📖</div>
-            <h3 class="feature-card__title">Open Source</h3>
-            <p class="feature-card__desc">Fully open-source and extensible. Inspect the orchestration logic, customize agent behaviors, and contribute new personality types to the framework.</p>
-          </div>
+        <div class="agent-preview-card">
+          <h4>Cynical</h4>
+          <p>Identifies risks, challenges assumptions, surfaces hidden dependencies.</p>
+        </div>
+        <div class="agent-preview-card">
+          <h4>Librarian</h4>
+          <p>Retrieves relevant knowledge, provides context, cites sources.</p>
+        </div>
+        <div class="agent-preview-card">
+          <h4>Provocateur</h4>
+          <p>Pushes boundaries, questions consensus, prevents groupthink.</p>
         </div>
       </div>
-    </section>
-
-    <!-- Agent Preview -->
-    <section class="section section--alt" id="agent-preview">
-      <div class="container">
-        <div class="section__header">
-          <span class="section__tag fade-in">The Agents</span>
-          <h2 class="section__title fade-in">Six Minds, One Mission</h2>
-          <p class="section__subtitle fade-in">Every agent plays a specific role in the discussion — and every role is essential.</p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card fade-in" style="border-top: 3px solid #3b82f6;">
-            <div class="feature-card__icon">⚖️</div>
-            <h3 class="feature-card__title">Moderator</h3>
-            <p class="feature-card__desc">Orchestrates the discussion, enforces phase boundaries, and ensures every voice is heard. The process owner.</p>
-          </div>
-          <div class="feature-card fade-in" style="border-top: 3px solid #10b981;">
-            <div class="feature-card__icon">🔧</div>
-            <h3 class="feature-card__title">Pragmatist</h3>
-            <p class="feature-card__desc">Turns ideas into deliverables. Builds the simplest thing that works, then refines. The execution engine.</p>
-          </div>
-          <div class="feature-card fade-in" style="border-top: 3px solid #8b5cf6;">
-            <div class="feature-card__icon">✨</div>
-            <h3 class="feature-card__title">Creative</h3>
-            <p class="feature-card__desc">Generates novel ideas and unexpected connections. The team's primary source of divergent thinking.</p>
-          </div>
-          <div class="feature-card fade-in" style="border-top: 3px solid #f43f5e;">
-            <div class="feature-card__icon">🛡️</div>
-            <h3 class="feature-card__title">Cynical</h3>
-            <p class="feature-card__desc">Identifies risks, challenges assumptions, and stress-tests proposals. The quality gate.</p>
-          </div>
-          <div class="feature-card fade-in" style="border-top: 3px solid #f59e0b;">
-            <div class="feature-card__icon">📚</div>
-            <h3 class="feature-card__title">Librarian</h3>
-            <p class="feature-card__desc">Provides context, references, and structured knowledge. The team's memory and research anchor.</p>
-          </div>
-          <div class="feature-card fade-in" style="border-top: 3px solid #f97316;">
-            <div class="feature-card__icon">🔥</div>
-            <h3 class="feature-card__title">Provocateur</h3>
-            <p class="feature-card__desc">Challenges groupthink, surfaces hidden assumptions, and proposes radical alternatives. The contrarian catalyst.</p>
-          </div>
-        </div>
-        <div style="text-align: center; margin-top: var(--space-10);" class="fade-in">
-          <a href="agents.html" class="btn btn--primary">Explore All Agent Profiles →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section" id="cta">
-      <div class="container" style="text-align: center;">
-        <h2 class="section__title fade-in" style="margin-bottom: var(--space-4);">Ready to See It in Action?</h2>
-        <p class="section__subtitle fade-in" style="margin-bottom: var(--space-8);">Walk through the orchestration loop step by step, or dive deep into each agent's personality and role.</p>
-        <div class="hero__actions fade-in">
-          <a href="loop.html" class="btn btn--primary">The Orchestration Loop →</a>
-          <a href="agents.html" class="btn btn--secondary">Agent Explorer</a>
-        </div>
+      
+      <div class="section-cta reveal">
+        <a href="agents.html" class="btn btn-primary">Explore All Agents</a>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      <div class="footer__inner">
-        <p class="footer__text">© 2024 LLMPersonality — Open-source multi-agent discussion framework</p>
-        <div class="footer__links">
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="loop.html" class="footer__link">The Loop</a>
-          <a href="agents.html" class="footer__link">Agents</a>
-        </div>
-      </div>
+      <p>&copy; 2024 LLMPersonality. Open-source under MIT License.</p>
     </div>
   </footer>
 
-  <script src="assets/js/core.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>

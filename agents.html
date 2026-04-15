@@ -3,146 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore each agent in the LLMPersonality framework — their roles, personality traits, example responses, and how they contribute to structured multi-agent discussions.">
-  <meta name="keywords" content="AI agents, agent personalities, moderator, pragmatist, creative, cynical, librarian, provocateur">
-  <meta name="theme-color" content="#3b82f6">
-  <meta property="og:title" content="Agent Explorer — LLMPersonality">
-  <meta property="og:description" content="Dive deep into each agent's role, personality traits, and example responses in the LLMPersonality multi-agent discussion framework.">
-  <meta property="og:type" content="website">
-  <title>Agent Explorer — LLMPersonality</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <title>Agents – LLMPersonality</title>
+  <meta name="description" content="Explore the six distinct agent personas in the LLMPersonality framework.">
+  
+  <!-- Skip link for keyboard accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- Root-relative base for sub-path compatibility -->
+  <base href="./">
+  
+  <!-- Zero-FOUC Theme + Contrast Preloader -->
+  <script>
+    (function() {
+      var storedTheme = localStorage.getItem('theme_v1');
+      var storedContrast = localStorage.getItem('contrast_v1');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = (storedTheme === 'dark' || storedTheme === 'light') ? storedTheme : (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      if (storedContrast === 'high') {
+        document.documentElement.setAttribute('data-contrast', 'high');
+      }
+    })();
+  </script>
+  
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__brand" aria-label="LLMPersonality Home">
-        <span class="nav__brand-icon">🧠</span>
-        <span class="nav__brand-text">LLMPersonality</span>
-      </a>
-      <div class="nav__links" role="menubar">
-        <a href="index.html" class="nav__link" role="menuitem">Home</a>
-        <a href="loop.html" class="nav__link" role="menuitem">The Loop</a>
-        <a href="agents.html" class="nav__link" role="menuitem">Agents</a>
-      </div>
-      <div class="nav__actions">
-        <button class="theme-toggle" aria-label="Toggle dark/light mode" type="button">
-          <span class="theme-toggle__icon theme-toggle__icon--light">🌙</span>
-          <span class="theme-toggle__icon theme-toggle__icon--dark">☀️</span>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="nav-logo">LLMPersonality</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="agents.html" class="nav-link active">Agents</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+      <div class="nav-toggles">
+        <button id="contrast-toggle" class="nav-toggle" aria-label="Toggle high contrast mode" title="High contrast">
+          <span class="toggle-icon">◐</span>
         </button>
-        <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button id="theme-toggle" class="nav-toggle" aria-label="Toggle dark/light mode" title="Dark mode">
+          <span class="toggle-icon">🌙</span>
         </button>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <main>
-    <!-- Page Hero -->
-    <section class="page-hero">
-      <div class="container page-hero__content">
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
-          <span class="breadcrumbs__separator">/</span>
-          <span class="breadcrumbs__current">Agents</span>
-        </nav>
-        <h1 class="page-hero__title fade-in">Agent Explorer</h1>
-        <p class="page-hero__subtitle fade-in">Dive deep into each agent's role, personality traits, and example responses. Click any card to explore their full profile.</p>
+  <main id="main-content" class="agents-main container">
+    <section class="agents-header">
+      <h1 class="page-title reveal">Agent Explorer</h1>
+      <p class="page-desc reveal">Browse, filter, and deep-dive into each agent's role, personality traits, and example responses.</p>
+    </section>
+
+    <section class="agents-filter">
+      <div class="filter-group reveal">
+        <button class="filter-btn active" data-filter="all">All Agents</button>
+        <button class="filter-btn" data-filter="process">Process</button>
+        <button class="filter-btn" data-filter="creative">Creative</button>
+        <button class="filter-btn" data-filter="critical">Critical</button>
+        <button class="filter-btn" data-filter="knowledge">Knowledge</button>
       </div>
     </section>
 
-    <!-- Agent Explorer -->
-    <section class="section" id="agent-explorer">
-      <div class="container">
-        <!-- Search Bar -->
-        <div style="margin-bottom: var(--space-6);">
-          <input
-            type="text"
-            id="agent-search"
-            placeholder="Search agents by name, role, or trait..."
-            style="
-              width: 100%;
-              max-width: 480px;
-              padding: var(--space-3) var(--space-5);
-              border: 1px solid var(--color-border);
-              border-radius: var(--border-radius-full);
-              background-color: var(--color-bg-secondary);
-              color: var(--color-text-primary);
-              font-size: var(--font-size-sm);
-              outline: none;
-              transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-            "
-            onfocus="this.style.borderColor='var(--color-accent)'; this.style.boxShadow='0 0 0 3px var(--color-accent-soft)'"
-            onblur="this.style.borderColor='var(--color-border)'; this.style.boxShadow='none'"
-            aria-label="Search agents"
-          >
-        </div>
-
-        <!-- Filter Buttons -->
-        <div class="agent-filters" role="group" aria-label="Filter agents by trait"></div>
-
-        <!-- Agent Grid -->
-        <div class="agent-grid" id="agent-grid" role="list" aria-label="Agent profiles">
-          <!-- Cards are dynamically rendered by agents.js -->
-          <noscript>
-            <p style="text-align: center; color: var(--color-text-secondary); padding: var(--space-8);">
-              JavaScript is required to view the interactive agent explorer. Please enable JavaScript in your browser.
-            </p>
-          </noscript>
-        </div>
-      </div>
-    </section>
-
-    <!-- How Agents Work Together -->
-    <section class="section section--alt" id="collaboration">
-      <div class="container">
-        <div class="section__header">
-          <span class="section__tag fade-in">Collaboration</span>
-          <h2 class="section__title fade-in">How Agents Work Together</h2>
-          <p class="section__subtitle fade-in">Each phase of the loop activates different agents, ensuring the right perspective is applied at the right time.</p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card fade-in" style="border-top: 3px solid var(--color-accent);">
-            <div class="feature-card__icon">🔍</div>
-            <h3 class="feature-card__title">Clarify Phase</h3>
-            <p class="feature-card__desc">The <strong>Moderator</strong> frames the discussion, the <strong>Librarian</strong> provides background context, and the <strong>Cynical</strong> agent surfaces hidden constraints before solutions are even proposed.</p>
-          </div>
-          <div class="feature-card fade-in" style="border-top: 3px solid #8b5cf6;">
-            <div class="feature-card__icon">💡</div>
-            <h3 class="feature-card__title">Explore Phase</h3>
-            <p class="feature-card__desc">The <strong>Creative</strong> generates novel ideas, the <strong>Librarian</strong> references prior art, and the <strong>Provocateur</strong> challenges the group to think beyond the obvious.</p>
-          </div>
-          <div class="feature-card fade-in" style="border-top: 3px solid #f43f5e;">
-            <div class="feature-card__icon">🎯</div>
-            <h3 class="feature-card__title">Narrow Phase</h3>
-            <p class="feature-card__desc">The <strong>Cynical</strong> stress-tests proposals, the <strong>Pragmatist</strong> assesses feasibility, and the <strong>Moderator</strong> forces a decision when consensus emerges.</p>
-          </div>
-        </div>
-        <div style="text-align: center; margin-top: var(--space-10);" class="fade-in">
-          <a href="loop.html" class="btn btn--secondary">See the Full Loop →</a>
-        </div>
-      </div>
+    <section class="agents-grid" id="agents-grid">
+      <!-- Cards rendered by agents-ui.js -->
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__inner">
-        <p class="footer__text">© 2024 LLMPersonality — Open-source multi-agent discussion framework</p>
-        <div class="footer__links">
-          <a href="index.html" class="footer__link">Home</a>
-          <a href="loop.html" class="footer__link">The Loop</a>
-          <a href="agents.html" class="footer__link">Agents</a>
-        </div>
+  <!-- Modal for agent deep-dive -->
+  <div id="agent-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-body" id="modal-body">
+        <!-- Content injected by agents-ui.js -->
       </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2024 LLMPersonality. Open-source under MIT License.</p>
     </div>
   </footer>
 
-  <script src="assets/js/core.js"></script>
-  <script src="assets/js/agents.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
