@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Walk through the four-phase orchestration loop that powers LLMPersonality — Clarify, Explore, Narrow, Execute — and see how each agent contributes at every stage.">
+  <meta name="keywords" content="orchestration loop, clarify explore narrow execute, multi-agent phases, AI discussion structure">
+  <meta name="theme-color" content="#3b82f6">
+  <meta property="og:title" content="The Orchestration Loop — LLMPersonality">
+  <meta property="og:description" content="Explore the four-phase discussion loop — Clarify, Explore, Narrow, Execute — that structures every LLMPersonality conversation.">
+  <meta property="og:type" content="website">
+  <title>The Orchestration Loop — LLMPersonality</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="LLMPersonality Home">
+        <span class="nav__brand-icon">🧠</span>
+        <span class="nav__brand-text">LLMPersonality</span>
+      </a>
+      <div class="nav__links" role="menubar">
+        <a href="index.html" class="nav__link" role="menuitem">Home</a>
+        <a href="loop.html" class="nav__link" role="menuitem">The Loop</a>
+        <a href="agents.html" class="nav__link" role="menuitem">Agents</a>
+      </div>
+      <div class="nav__actions">
+        <button class="theme-toggle" aria-label="Toggle dark/light mode" type="button">
+          <span class="theme-toggle__icon theme-toggle__icon--light">🌙</span>
+          <span class="theme-toggle__icon theme-toggle__icon--dark">☀️</span>
+        </button>
+        <button class="nav__mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="loop-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumbs__separator">/</span>
+          <span class="breadcrumbs__current">The Loop</span>
+        </nav>
+        <h1 class="loop-hero__title fade-in">The Orchestration Loop</h1>
+        <p class="loop-hero__subtitle fade-in">Every LLMPersonality discussion follows the same four-phase structure — from ambiguity to clarity to concrete deliverables. Scroll to see how each phase works.</p>
+      </div>
+    </section>
+
+    <!-- Interactive Loop Diagram -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag fade-in">Overview</span>
+          <h2 class="section__title fade-in">The Cycle at a Glance</h2>
+          <p class="section__subtitle fade-in">Hover over each phase to highlight its details below, or click to jump directly.</p>
+        </div>
+        <div id="loop-diagram-container"></div>
+      </div>
+    </section>
+
+    <!-- Loop Phases (rendered by loop.js) -->
+    <section class="loop-phases" id="loop-phases">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag fade-in">Deep Dive</span>
+          <h2 class="section__title fade-in">Phase by Phase</h2>
+          <p class="section__subtitle fade-in">Each phase activates specific agents and produces specific outcomes. Here's what happens at every step.</p>
+        </div>
+        <div id="loop-phases-container"></div>
+      </div>
+    </section>
+
+    <!-- Key Principles -->
+    <section class="section section--alt" id="principles">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__tag fade-in">Principles</span>
+          <h2 class="section__title fade-in">What Makes This Loop Work</h2>
+          <p class="section__subtitle fade-in">The orchestration loop isn't just a sequence — it's a set of principles that ensure every discussion produces real value.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card fade-in">
+            <div class="feature-card__icon">🚫</div>
+            <h3 class="feature-card__title">No Skipping Phases</h3>
+            <p class="feature-card__desc">The Moderator enforces phase boundaries. You can't Execute without Narrowing, and you can't Narrow without Exploring. Each phase builds on the last.</p>
+          </div>
+          <div class="feature-card fade-in">
+            <div class="feature-card__icon">🔄</div>
+            <h3 class="feature-card__title">Controlled Backtracking</h3>
+            <p class="feature-card__desc">If new information surfaces during Narrow, the group can return to Explore — but only with the Moderator's explicit call. Backtracking is deliberate, not accidental.</p>
+          </div>
+          <div class="feature-card fade-in">
+            <div class="feature-card__icon">✅</div>
+            <h3 class="feature-card__title">Evidence Over Opinion</h3>
+            <p class="feature-card__desc">The Librarian grounds claims in prior art. The Cynical agent demands proof. Opinions are welcome, but they must be supported — especially during Narrow and Execute.</p>
+          </div>
+          <div class="feature-card fade-in">
+            <div class="feature-card__icon">📦</div>
+            <h3 class="feature-card__title">Always Ship Something</h3>
+            <p class="feature-card__desc">The Pragmatist ensures every discussion produces a tangible artifact — code, documentation, or a decision record. Discussions that end without deliverables are failures.</p>
+          </div>
+          <div class="feature-card fade-in">
+            <div class="feature-card__icon">🛑</div>
+            <h3 class="feature-card__title">Explicit Sign-Off</h3>
+            <p class="feature-card__desc">No phase transition is implicit. The Moderator declares when the group moves forward, and only after checking that the current phase's objectives are met.</p>
+          </div>
+          <div class="feature-card fade-in">
+            <div class="feature-card__icon">⚡</div>
+            <h3 class="feature-card__title">Progress Over Perfection</h3>
+            <p class="feature-card__desc">The loop prioritizes forward momentum. A good-enough decision that ships today beats a perfect decision that ships never. The Pragmatist enforces this bias for action.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section" id="stats">
+      <div class="container" style="text-align: center;">
+        <div class="section__header">
+          <span class="section__tag fade-in">By The Numbers</span>
+          <h2 class="section__title fade-in">Structured Discussions, Better Outcomes</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-8); margin-top: var(--space-10);" class="fade-in">
+          <div>
+            <div style="font-size: var(--font-size-4xl); font-weight: 800; color: var(--color-accent);" data-count="4" data-suffix="">0</div>
+            <div style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--space-2);">Discussion Phases</div>
+          </div>
+          <div>
+            <div style="font-size: var(--font-size-4xl); font-weight: 800; color: var(--color-accent);" data-count="6" data-suffix="">0</div>
+            <div style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--space-2);">Agent Personalities</div>
+          </div>
+          <div>
+            <div style="font-size: var(--font-size-4xl); font-weight: 800; color: var(--color-accent);" data-count="0" data-suffix="">0</div>
+            <div style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--space-2);">External Dependencies</div>
+          </div>
+          <div>
+            <div style="font-size: var(--font-size-4xl); font-weight: 800; color: var(--color-accent);" data-count="100" data-suffix="%">0%</div>
+            <div style="font-size: var(--font-size-sm); color: var(--color-text-secondary); margin-top: var(--space-2);">Open Source</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--alt" id="cta-loop">
+      <div class="container" style="text-align: center;">
+        <h2 class="section__title fade-in" style="margin-bottom: var(--space-4);">Meet the Agents Behind Each Phase</h2>
+        <p class="section__subtitle fade-in" style="margin-bottom: var(--space-8);">Every phase activates different agents with different priorities. Explore their personalities and see how they collaborate.</p>
+        <div class="hero__actions fade-in">
+          <a href="agents.html" class="btn btn--primary">Explore Agent Profiles →</a>
+          <a href="index.html" class="btn btn--secondary">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__text">© 2024 LLMPersonality — Open-source multi-agent discussion framework</p>
+        <div class="footer__links">
+          <a href="index.html" class="footer__link">Home</a>
+          <a href="loop.html" class="footer__link">The Loop</a>
+          <a href="agents.html" class="footer__link">Agents</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/loop.js"></script>
+</body>
+</html>
