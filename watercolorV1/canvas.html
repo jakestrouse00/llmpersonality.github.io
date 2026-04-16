@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio — Aquarelle</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">Aquarelle</a>
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="gallery.html" class="nav__link">Gallery</a>
+        <a href="canvas.html" class="nav__link nav__link--active">Studio</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Canvas Section -->
+  <section class="canvas-section section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-header__title">The Studio</h2>
+        <p class="section-header__subtitle">Paint with watercolor and ink on the digital canvas</p>
+      </div>
+
+      <div class="canvas-toolbar reveal">
+        <span class="canvas-toolbar__label">Color</span>
+        <div class="color-swatches">
+          <button class="color-swatch color-swatch--active" data-color="106,154,176" style="background: rgba(106,154,176,0.7);" aria-label="Blue wash"></button>
+          <button class="color-swatch" data-color="194,139,154" style="background: rgba(194,139,154,0.7);" aria-label="Rose wash"></button>
+          <button class="color-swatch" data-color="148,178,140" style="background: rgba(148,178,140,0.7);" aria-label="Green wash"></button>
+          <button class="color-swatch" data-color="218,190,130" style="background: rgba(218,190,130,0.7);" aria-label="Amber wash"></button>
+          <button class="color-swatch" data-color="154,130,178" style="background: rgba(154,130,178,0.7);" aria-label="Violet wash"></button>
+          <button class="color-swatch" data-color="44,44,44" style="background: rgba(44,44,44,0.7);" aria-label="Ink black"></button>
+        </div>
+        <button class="btn" id="canvas-clear" style="margin-left: auto;">Clear Canvas</button>
+      </div>
+
+      <div class="canvas-wrapper reveal">
+        <canvas id="paint-canvas"></canvas>
+        <div class="canvas-instructions">Click to splash · Drag to paint ink trails · Your creation fades like watercolor on wet paper</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section">
+    <div class="container">
+      <div class="about reveal reveal--bleed">
+        <h2 class="about__title">About Aquarelle</h2>
+        <p class="about__text">Aquarelle is a digital storytelling platform that celebrates the delicate interplay between watercolor and ink. Every visual narrative here is crafted to evoke the feeling of pigment bleeding across wet paper — the way stories bleed into one another, the way fine lines give structure to beautiful chaos.</p>
+        <p class="about__text">The Studio invites you to become part of this aesthetic. Click to create watercolor splashes that bloom and fade. Drag to trace ink lines that bleed softly into the paper. Each mark is temporary — a meditation on impermanence, a digital echo of the way watercolor dries and disappears.</p>
+        <p class="about__text">This project was built with vanilla HTML, CSS, and JavaScript — no frameworks, no build tools, just the raw materials of the web shaped into something that feels like paint on paper.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">Aquarelle</div>
+      <p class="footer__text">Watercolor stories &amp; ink traces</p>
+      <div class="footer__links">
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="gallery.html" class="footer__link">Gallery</a>
+        <a href="canvas.html" class="footer__link">Studio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/canvas.js"></script>
+</body>
+</html>

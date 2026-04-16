@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — Aquarelle</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">Aquarelle</a>
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link">Home</a>
+        <a href="gallery.html" class="nav__link nav__link--active">Gallery</a>
+        <a href="canvas.html" class="nav__link">Studio</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="page-header__wash" aria-hidden="true"></div>
+    <div class="page-header__content reveal">
+      <h1 class="page-header__title">Story Gallery</h1>
+      <p class="page-header__subtitle">Visual narratives painted in watercolor, traced in ink</p>
+    </div>
+  </header>
+
+  <!-- Gallery Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="cards-grid">
+        <div class="card card--blue reveal" data-story="0">
+          <div class="card__wash" aria-hidden="true"></div>
+          <div class="card__body">
+            <h3 class="card__title">The River's Memory</h3>
+            <p class="card__excerpt">A river that remembers every stone it has touched, every leaf it has carried downstream.</p>
+          </div>
+        </div>
+        <div class="card card--pink reveal" data-story="1">
+          <div class="card__wash" aria-hidden="true"></div>
+          <div class="card__body">
+            <h3 class="card__title">Autumn in Kyoto</h3>
+            <p class="card__excerpt">Meditations on impermanence through the falling leaves of ancient temple gardens.</p>
+          </div>
+        </div>
+        <div class="card card--green reveal" data-story="2">
+          <div class="card__wash" aria-hidden="true"></div>
+          <div class="card__body">
+            <h3 class="card__title">The Botanist's Dream</h3>
+            <p class="card__excerpt">A surreal journey through a garden that exists only between waking and sleep.</p>
+          </div>
+        </div>
+        <div class="card card--purple reveal" data-story="3">
+          <div class="card__wash" aria-hidden="true"></div>
+          <div class="card__body">
+            <h3 class="card__title">Midnight Bloom</h3>
+            <p class="card__excerpt">Flowers that open only at midnight, releasing memories.</p>
+          </div>
+        </div>
+        <div class="card card--amber reveal" data-story="4">
+          <div class="card__wash" aria-hidden="true"></div>
+          <div class="card__body">
+            <h3 class="card__title">Desert Mirage</h3>
+            <p class="card__excerpt">The desert tells stories through mirages — visions of water, home, loss.</p>
+          </div>
+        </div>
+        <div class="card card--slate reveal" data-story="5">
+          <div class="card__wash" aria-hidden="true"></div>
+          <div class="card__body">
+            <h3 class="card__title">The Last Lighthouse</h3>
+            <p class="card__excerpt">A lighthouse keeper's final night, watching the beam dissolve into sea fog.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal">
+      <div class="modal__wash" id="modal-wash" aria-hidden="true"></div>
+      <button class="modal__close" id="modal-close" aria-label="Close story">&times;</button>
+      <div class="modal__body">
+        <h2 class="modal__title" id="modal-title"></h2>
+        <div class="modal__text" id="modal-text"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__brand">Aquarelle</div>
+      <p class="footer__text">Watercolor stories &amp; ink traces</p>
+      <div class="footer__links">
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="gallery.html" class="footer__link">Gallery</a>
+        <a href="canvas.html" class="footer__link">Studio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
