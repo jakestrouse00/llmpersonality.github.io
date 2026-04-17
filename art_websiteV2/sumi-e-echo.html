@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumi-e Echo — The Inkwell Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inkwell-app">
+
+  <nav id="inkwell-nav"></nav>
+
+  <aside class="toolbar" role="complementary" aria-label="Sumi-e Echo tools">
+    <div class="toolbar-section">
+      <div class="toolbar-title">Mode</div>
+      <button class="tool-btn tool-btn--primary" id="btn-stone-mode" style="width:100%;">◎ Place Stone</button>
+      <button class="tool-btn tool-btn--secondary" id="btn-flow-mode" style="width:100%;">≋ Flow Rake</button>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Stone</div>
+      <div class="tool-slider">
+        <label>Size <span id="stone-size-val">30</span></label>
+        <input type="range" id="stone-size" min="10" max="80" value="30">
+      </div>
+      <div class="tool-slider">
+        <label>Opacity <span id="stone-opacity-val">0.9</span></label>
+        <input type="range" id="stone-opacity" min="20" max="100" value="90">
+      </div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Ripple</div>
+      <div class="tool-slider">
+        <label>Spread <span id="ripple-spread-val">1.0</span></label>
+        <input type="range" id="ripple-spread" min="1" max="30" value="10">
+      </div>
+      <div class="tool-slider">
+        <label>Rings <span id="ripple-rings-val">5</span></label>
+        <input type="range" id="ripple-rings" min="2" max="12" value="5">
+      </div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Ink Tone</div>
+      <div class="color-palette" id="color-palette"></div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Actions</div>
+      <button class="tool-btn tool-btn--secondary" id="btn-clear">✕ Clear Garden</button>
+      <button class="tool-btn tool-btn--secondary" id="btn-undo">↩ Undo</button>
+    </div>
+  </aside>
+
+  <main class="canvas-area">
+    <canvas id="sumie-canvas"></canvas>
+  </main>
+
+  <aside class="sidebar" role="complementary" aria-label="Sumi-e Echo settings">
+    <div class="toolbar-section">
+      <div class="toolbar-title">Save</div>
+      <button class="tool-btn tool-btn--gold" id="btn-save">★ Save to Gallery</button>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Info</div>
+      <p class="text-muted">In stone mode, click to place ink-blots that act as obstacles. In flow mode, drag to rake ripples that echo and deflect around the stones.</p>
+      <p class="text-muted" style="margin-top:0.5rem;">Paper absorption affects how far ripples spread. Switch paper in the top bar.</p>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Garden</div>
+      <p class="text-muted" id="stone-count">0 stones</p>
+      <p class="text-muted" id="ripple-count">0 ripples</p>
+    </div>
+  </aside>
+
+  <script src="js/common.js"></script>
+  <script src="js/sumi-e-echo.js"></script>
+</body>
+</html>

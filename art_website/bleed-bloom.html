@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bleed &amp; Bloom Lab — The Inkwell Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-tool="bleed">
+  <nav id="ink-sidebar">
+    <div class="sidebar-brand"><svg><use xlink:href="assets/icons.svg#icon-hub"></use></svg><span class="brand-text">Inkwell</span></div>
+    <ul class="sidebar-tools">
+      <li><a href="index.html" class="nav-link" data-tool="hub"><svg><use xlink:href="assets/icons.svg#icon-hub"></use></svg><span class="nav-tooltip">Studio Hub</span></a></li>
+      <li><a href="fluid-watercolor.html" class="nav-link" data-tool="fluid"><svg><use xlink:href="assets/icons.svg#icon-fluid"></use></svg><span class="nav-tooltip">Fluid Watercolor</span></a></li>
+      <li><a href="dynamic-ink.html" class="nav-link" data-tool="ink"><svg><use xlink:href="assets/icons.svg#icon-ink"></use></svg><span class="nav-tooltip">Dynamic Ink</span></a></li>
+      <li><a href="zen-garden.html" class="nav-link" data-tool="zen"><svg><use xlink:href="assets/icons.svg#icon-zen"></use></svg><span class="nav-tooltip">Zen Garden</span></a></li>
+      <li><a href="sumi-e.html" class="nav-link" data-tool="sumi"><svg><use xlink:href="assets/icons.svg#icon-sumi"></use></svg><span class="nav-tooltip">Sumi-e</span></a></li>
+      <li><a href="bleed-bloom.html" class="nav-link" data-tool="bleed"><svg><use xlink:href="assets/icons.svg#icon-bleed"></use></svg><span class="nav-tooltip">Bleed &amp; Bloom</span></a></li>
+      <li><a href="splatter.html" class="nav-link" data-tool="splatter"><svg><use xlink:href="assets/icons.svg#icon-splatter"></use></svg><span class="nav-tooltip">Splatter</span></a></li>
+      <li><a href="gradient-weaver.html" class="nav-link" data-tool="gradient"><svg><use xlink:href="assets/icons.svg#icon-gradient"></use></svg><span class="nav-tooltip">Gradient Weaver</span></a></li>
+    </ul>
+    <ul class="sidebar-bottom">
+      <li><a href="gallery.html" class="nav-link" data-tool="gallery"><svg><use xlink:href="assets/icons.svg#icon-gallery"></use></svg><span class="nav-tooltip">Gallery</span></a></li>
+    </ul>
+  </nav>
+  <div class="tool-page">
+    <header class="tool-header"><h1>Bleed &amp; Bloom Lab</h1></header>
+    <div class="tool-workspace">
+      <div class="canvas-container" id="canvas-container"></div>
+      <aside class="tool-controls">
+        <div class="tool-control-group"><label>Drop Size <span class="value-display" id="val-size">50</span></label><input type="range" class="ink-slider" id="slider-size" min="10" max="100" value="50"></div>
+        <div class="tool-control-group"><label>Bleed Speed <span class="value-display" id="val-speed">40</span></label><input type="range" class="ink-slider" id="slider-speed" min="5" max="100" value="40"></div>
+        <div class="tool-control-group"><label>Mix Intensity <span class="value-display" id="val-mix">60</span></label><input type="range" class="ink-slider" id="slider-mix" min="10" max="100" value="60"></div>
+        <hr class="ink-separator">
+        <div class="tool-control-group"><label>Color Drops</label>
+          <div class="ink-palette" id="palette">
+            <div class="ink-swatch active" data-color="#c17f59" style="background:#c17f59" title="Ochre"></div>
+            <div class="ink-swatch" data-color="#8b1a1a" style="background:#8b1a1a" title="Madder Lake"></div>
+            <div class="ink-swatch" data-color="#1a1a2e" style="background:#1a1a2e" title="Indigo"></div>
+            <div class="ink-swatch" data-color="#2d5a3d" style="background:#2d5a3d" title="Verdigris"></div>
+            <div class="ink-swatch" data-color="#6b3a5a" style="background:#6b3a5a" title="Mauve"></div>
+            <div class="ink-swatch" data-color="#c49a3c" style="background:#c49a3c" title="Gamboge"></div>
+            <div class="ink-swatch" data-color="#3a4a7a" style="background:#3a4a7a" title="Prussian Blue"></div>
+            <div class="ink-swatch" data-color="#5a1a1a" style="background:#5a1a1a" title="Vermilion"></div>
+          </div>
+        </div>
+        <hr class="ink-separator">
+        <button class="ink-button ink-button-save" id="btn-save">Save to Gallery</button>
+        <button class="ink-button ink-button-clear" id="btn-clear">Clear Lab</button>
+      </aside>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+  <script src="js/bleed-bloom.js"></script>
+</body>
+</html>

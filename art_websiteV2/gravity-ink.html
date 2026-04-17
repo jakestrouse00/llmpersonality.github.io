@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gravity's Ink — The Inkwell Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inkwell-app">
+
+  <nav id="inkwell-nav"></nav>
+
+  <aside class="toolbar" role="complementary" aria-label="Gravity's Ink tools">
+    <div class="toolbar-section">
+      <div class="toolbar-title">Splatter</div>
+      <div class="tool-slider">
+        <label>Force <span id="splatter-force-val">0.7</span></label>
+        <input type="range" id="splatter-force" min="1" max="100" value="70">
+      </div>
+      <div class="tool-slider">
+        <label>Count <span id="splatter-count-val">12</span></label>
+        <input type="range" id="splatter-count" min="3" max="40" value="12">
+      </div>
+      <div class="tool-slider">
+        <label>Drop Size <span id="drop-size-val">6</span></label>
+        <input type="range" id="drop-size" min="2" max="20" value="6">
+      </div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Physics</div>
+      <div class="tool-slider">
+        <label>Tilt X <span id="tilt-x-val">0</span>°</label>
+        <input type="range" id="tilt-x" min="-45" max="45" value="0">
+      </div>
+      <div class="tool-slider">
+        <label>Tilt Y <span id="tilt-y-val">0</span>°</label>
+        <input type="range" id="tilt-y" min="-45" max="45" value="0">
+      </div>
+      <div class="tool-slider">
+        <label>Viscosity <span id="viscosity-val">0.5</span></label>
+        <input type="range" id="viscosity" min="1" max="100" value="50">
+      </div>
+      <div class="tool-slider">
+        <label>Gravity <span id="gravity-val">0.3</span></label>
+        <input type="range" id="gravity" min="1" max="100" value="30">
+      </div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Ink Color</div>
+      <div class="color-palette" id="color-palette"></div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Actions</div>
+      <button class="tool-btn tool-btn--secondary" id="btn-clear">✕ Clear Canvas</button>
+      <button class="tool-btn tool-btn--secondary" id="btn-undo">↩ Undo</button>
+    </div>
+  </aside>
+
+  <main class="canvas-area">
+    <canvas id="gravity-canvas"></canvas>
+  </main>
+
+  <aside class="sidebar" role="complementary" aria-label="Gravity's Ink settings">
+    <div class="toolbar-section">
+      <div class="toolbar-title">Save</div>
+      <button class="tool-btn tool-btn--gold" id="btn-save">★ Save to Gallery</button>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Info</div>
+      <p class="text-muted">Click to splatter ink with force. Adjust Tilt X/Y to make the canvas "lean" — ink drips will run in the tilt direction. Higher viscosity means slower, thicker drips.</p>
+      <p class="text-muted" style="margin-top:0.5rem;">Paper absorption affects how far drips spread on contact. Switch paper in the top bar.</p>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Drips</div>
+      <p class="text-muted" id="drip-count">0 active drips</p>
+      <p class="text-muted" id="splatter-count-stat">0 splatters</p>
+    </div>
+  </aside>
+
+  <script src="js/common.js"></script>
+  <script src="js/gravity-ink.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ink-Wash Horizon — The Inkwell Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inkwell-app">
+
+  <nav id="inkwell-nav"></nav>
+
+  <aside class="toolbar" role="complementary" aria-label="Ink-Wash Horizon tools">
+    <div class="toolbar-section">
+      <div class="toolbar-title">Mode</div>
+      <button class="tool-btn tool-btn--primary" id="btn-wash-mode" style="width:100%;">≋ Lay Wash</button>
+      <button class="tool-btn tool-btn--secondary" id="btn-bead-mode" style="width:100%;">● Drop Bead</button>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Wash</div>
+      <div class="tool-slider">
+        <label>Width <span id="wash-width-val">80</span></label>
+        <input type="range" id="wash-width" min="20" max="200" value="80">
+      </div>
+      <div class="tool-slider">
+        <label>Opacity <span id="wash-opacity-val">0.15</span></label>
+        <input type="range" id="wash-opacity" min="3" max="50" value="15">
+      </div>
+      <div class="tool-slider">
+        <label>Softness <span id="wash-softness-val">2</span></label>
+        <input type="range" id="wash-softness" min="0" max="10" value="2">
+      </div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Bead</div>
+      <div class="tool-slider">
+        <label>Size <span id="bead-size-val">20</span></label>
+        <input type="range" id="bead-size" min="5" max="60" value="20">
+      </div>
+      <div class="tool-slider">
+        <label>Spread <span id="bead-spread-val">1.0</span></label>
+        <input type="range" id="bead-spread" min="1" max="30" value="10">
+      </div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Wash Tone</div>
+      <div class="color-palette" id="color-palette"></div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Actions</div>
+      <button class="tool-btn tool-btn--secondary" id="btn-clear">✕ Clear Canvas</button>
+      <button class="tool-btn tool-btn--secondary" id="btn-undo">↩ Undo</button>
+    </div>
+  </aside>
+
+  <main class="canvas-area">
+    <canvas id="horizon-canvas"></canvas>
+  </main>
+
+  <aside class="sidebar" role="complementary" aria-label="Ink-Wash Horizon settings">
+    <div class="toolbar-section">
+      <div class="toolbar-title">Save</div>
+      <button class="tool-btn tool-btn--gold" id="btn-save">★ Save to Gallery</button>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Info</div>
+      <p class="text-muted">In wash mode, drag horizontally to lay translucent washes that merge and bleed. In bead mode, click to drop concentrated pigment that blooms and spreads into the wet paper.</p>
+      <p class="text-muted" style="margin-top:0.5rem;">Softness controls the blur of each wash stroke. Paper absorption affects bead spread speed.</p>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Layers</div>
+      <p class="text-muted" id="wash-count">0 washes</p>
+      <p class="text-muted" id="bead-count">0 beads</p>
+    </div>
+  </aside>
+
+  <script src="js/common.js"></script>
+  <script src="js/ink-wash-horizon.js"></script>
+</body>
+</html>

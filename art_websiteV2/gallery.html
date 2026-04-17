@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inkwell Gallery — The Inkwell Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inkwell-app inkwell-app--hub">
+
+  <nav id="inkwell-nav"></nav>
+
+  <main class="hub-content" style="grid-area:content;">
+    <section class="hub-hero ink-reveal" style="padding:2rem 0 1rem;">
+      <h1 style="font-size:2rem;">Inkwell Gallery</h1>
+      <p>Your saved artworks, curated from every tool in the Atelier.</p>
+    </section>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+      <p class="text-muted" id="gallery-total">0 artworks</p>
+      <button class="tool-btn tool-btn--secondary" id="btn-clear-gallery" style="font-size:0.75rem;">✕ Clear All</button>
+    </div>
+
+    <div class="gallery-grid ink-reveal-stagger" id="gallery-grid">
+    </div>
+
+    <div class="gallery-empty ink-reveal" id="gallery-empty" style="display:none;">
+      <p style="font-size:1.5rem;">⬡</p>
+      <p>No artworks saved yet.</p>
+      <p class="text-muted" style="margin-top:0.5rem;">Create something in any tool and save it here.</p>
+    </div>
+  </main>
+
+  <div class="gallery-overlay" id="gallery-overlay">
+    <button class="gallery-overlay-close" id="overlay-close">✕</button>
+    <img id="overlay-img" src="" alt="Full-size artwork">
+    <div style="position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);display:flex;gap:0.5rem;">
+      <button class="tool-btn tool-btn--gold" id="overlay-download" style="font-size:0.8rem;">↓ Download</button>
+      <button class="tool-btn tool-btn--secondary" id="overlay-delete" style="font-size:0.8rem;color:#c0392b;">✕ Delete</button>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

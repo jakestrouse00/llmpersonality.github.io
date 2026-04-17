@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluid Watercolor Canvas — The Inkwell Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inkwell-app">
+
+  <nav id="inkwell-nav"></nav>
+
+  <aside class="toolbar" role="complementary" aria-label="Watercolor tools">
+    <div class="toolbar-section">
+      <div class="toolbar-title">Brush</div>
+      <div class="tool-slider">
+        <label>Size <span id="brush-size-val">24</span></label>
+        <input type="range" id="brush-size" min="4" max="80" value="24">
+      </div>
+      <div class="tool-slider">
+        <label>Opacity <span id="brush-opacity-val">0.6</span></label>
+        <input type="range" id="brush-opacity" min="5" max="100" value="60">
+      </div>
+      <div class="tool-slider">
+        <label>Bleed <span id="brush-bleed-val">1.0</span></label>
+        <input type="range" id="brush-bleed" min="1" max="30" value="10">
+      </div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Palette</div>
+      <div class="color-palette" id="color-palette"></div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Blend Mode</div>
+      <select id="blend-mode" style="width:100%;padding:4px 8px;border-radius:4px;border:1px solid var(--ink-wash);font-size:0.8rem;background:var(--card-bg);color:var(--fg);">
+        <option value="multiply">Multiply</option>
+        <option value="source-over">Normal</option>
+        <option value="soft-light">Soft Light</option>
+        <option value="overlay">Overlay</option>
+        <option value="darken">Darken</option>
+      </select>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Actions</div>
+      <button class="tool-btn tool-btn--secondary" id="btn-clear">✕ Clear Canvas</button>
+      <button class="tool-btn tool-btn--secondary" id="btn-undo">↩ Undo</button>
+    </div>
+  </aside>
+
+  <main class="canvas-area">
+    <canvas id="watercolor-canvas"></canvas>
+  </main>
+
+  <aside class="sidebar" role="complementary" aria-label="Watercolor settings">
+    <div class="toolbar-section">
+      <div class="toolbar-title">Save</div>
+      <button class="tool-btn tool-btn--gold" id="btn-save">★ Save to Gallery</button>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Info</div>
+      <p class="text-muted">Click to drop a concentrated pigment blot. Drag to paint flowing washes that bloom and bleed into the paper.</p>
+      <p class="text-muted" style="margin-top:0.5rem;">Paper type affects absorption rate. Switch paper in the top navigation bar.</p>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Strokes</div>
+      <p class="text-muted" id="stroke-count">0 strokes</p>
+    </div>
+  </aside>
+
+  <script src="js/common.js"></script>
+  <script src="js/fluid-watercolor.js"></script>
+</body>
+</html>

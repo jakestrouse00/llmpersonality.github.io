@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumi-e Brush Studio — The Inkwell Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-tool="sumi">
+  <nav id="ink-sidebar">
+    <div class="sidebar-brand"><svg><use xlink:href="assets/icons.svg#icon-hub"></use></svg><span class="brand-text">Inkwell</span></div>
+    <ul class="sidebar-tools">
+      <li><a href="index.html" class="nav-link" data-tool="hub"><svg><use xlink:href="assets/icons.svg#icon-hub"></use></svg><span class="nav-tooltip">Studio Hub</span></a></li>
+      <li><a href="fluid-watercolor.html" class="nav-link" data-tool="fluid"><svg><use xlink:href="assets/icons.svg#icon-fluid"></use></svg><span class="nav-tooltip">Fluid Watercolor</span></a></li>
+      <li><a href="dynamic-ink.html" class="nav-link" data-tool="ink"><svg><use xlink:href="assets/icons.svg#icon-ink"></use></svg><span class="nav-tooltip">Dynamic Ink</span></a></li>
+      <li><a href="zen-garden.html" class="nav-link" data-tool="zen"><svg><use xlink:href="assets/icons.svg#icon-zen"></use></svg><span class="nav-tooltip">Zen Garden</span></a></li>
+      <li><a href="sumi-e.html" class="nav-link" data-tool="sumi"><svg><use xlink:href="assets/icons.svg#icon-sumi"></use></svg><span class="nav-tooltip">Sumi-e</span></a></li>
+      <li><a href="bleed-bloom.html" class="nav-link" data-tool="bleed"><svg><use xlink:href="assets/icons.svg#icon-bleed"></use></svg><span class="nav-tooltip">Bleed &amp; Bloom</span></a></li>
+      <li><a href="splatter.html" class="nav-link" data-tool="splatter"><svg><use xlink:href="assets/icons.svg#icon-splatter"></use></svg><span class="nav-tooltip">Splatter</span></a></li>
+      <li><a href="gradient-weaver.html" class="nav-link" data-tool="gradient"><svg><use xlink:href="assets/icons.svg#icon-gradient"></use></svg><span class="nav-tooltip">Gradient Weaver</span></a></li>
+    </ul>
+    <ul class="sidebar-bottom">
+      <li><a href="gallery.html" class="nav-link" data-tool="gallery"><svg><use xlink:href="assets/icons.svg#icon-gallery"></use></svg><span class="nav-tooltip">Gallery</span></a></li>
+    </ul>
+  </nav>
+  <div class="tool-page">
+    <header class="tool-header"><h1>Sumi-e Brush Studio</h1></header>
+    <div class="tool-workspace">
+      <div class="canvas-container" id="canvas-container"></div>
+      <aside class="tool-controls">
+        <div class="tool-control-group"><label>Brush Load <span class="value-display" id="val-load">70</span></label><input type="range" class="ink-slider" id="slider-load" min="10" max="100" value="70"></div>
+        <div class="tool-control-group"><label>Dry Texture <span class="value-display" id="val-dry">50</span></label><input type="range" class="ink-slider" id="slider-dry" min="0" max="100" value="50"></div>
+        <div class="tool-control-group"><label>Stroke Taper <span class="value-display" id="val-taper">60</span></label><input type="range" class="ink-slider" id="slider-taper" min="10" max="100" value="60"></div>
+        <hr class="ink-separator">
+        <div class="tool-control-group"><label>Ink Tone</label>
+          <div class="ink-palette" id="palette">
+            <div class="ink-swatch active" data-color="#0a0a0a" style="background:#0a0a0a" title="Sumi Black"></div>
+            <div class="ink-swatch" data-color="#2a2a2a" style="background:#2a2a2a" title="Light Sumi"></div>
+            <div class="ink-swatch" data-color="#3b2f2f" style="background:#3b2f2f" title="Sepia"></div>
+            <div class="ink-swatch" data-color="#1a1a2e" style="background:#1a1a2e" title="Indigo"></div>
+            <div class="ink-swatch" data-color="#5a5a5a" style="background:#5a5a5a" title="Gray Wash"></div>
+            <div class="ink-swatch" data-color="#1a3a2a" style="background:#1a3a2a" title="Pine"></div>
+          </div>
+        </div>
+        <hr class="ink-separator">
+        <button class="ink-button ink-button-save" id="btn-save">Save to Gallery</button>
+        <button class="ink-button ink-button-clear" id="btn-clear">Clear Canvas</button>
+      </aside>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+  <script src="js/sumi-e.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kintsugi Fragments — The Inkwell Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inkwell-app">
+
+  <nav id="inkwell-nav"></nav>
+
+  <aside class="toolbar" role="complementary" aria-label="Kintsugi tools">
+    <div class="toolbar-section">
+      <div class="toolbar-title">Gold Ink</div>
+      <div class="tool-slider">
+        <label>Brush Width <span id="brush-width-val">4</span></label>
+        <input type="range" id="brush-width" min="2" max="12" value="4">
+      </div>
+      <div class="tool-slider">
+        <label>Shimmer <span id="shimmer-val">0.5</span></label>
+        <input type="range" id="shimmer" min="0" max="100" value="50">
+      </div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Gold Tone</div>
+      <div class="color-palette" id="color-palette"></div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Actions</div>
+      <button class="tool-btn tool-btn--secondary" id="btn-reset">⟲ Reset Shards</button>
+      <button class="tool-btn tool-btn--secondary" id="btn-undo">↩ Undo</button>
+    </div>
+  </aside>
+
+  <main class="canvas-area">
+    <canvas id="kintsugi-canvas"></canvas>
+  </main>
+
+  <aside class="sidebar" role="complementary" aria-label="Kintsugi settings">
+    <div class="toolbar-section">
+      <div class="toolbar-title">Preserve</div>
+      <button class="tool-btn tool-btn--gold" id="btn-save">★ Save to Gallery</button>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Restoration</div>
+      <p class="text-muted">A shattered composition. Use the gold ink to bridge the gaps between fragments. Repair the breaks to reveal the hidden harmony within.</p>
+      <p class="text-muted" style="margin-top:0.5rem;">The gold ink snaps to the edges of the shards, guiding your hand in the art of repair.</p>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Progress</div>
+      <div class="tool-slider">
+        <label>Repaired <span id="repair-percent">0%</span></label>
+        <div style="width:100%; height:8px; background:var(--ink-wash); border-radius:4px; overflow:hidden; margin-top:4px;">
+          <div id="repair-bar" style="width:0%; height:100%; background:var(--accent-gold); transition:width 0.3s ease;"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="js/common.js"></script>
+  <script src="js/kintsugi-fragments.js"></script>
+</body>
+</html>

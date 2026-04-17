@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Gallery — The Inkwell Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-tool="gallery">
+
+  <nav id="ink-sidebar">
+    <div class="sidebar-brand">
+      <svg><use xlink:href="assets/icons.svg#icon-hub"></use></svg>
+      <span class="brand-text">Inkwell</span>
+    </div>
+    <ul class="sidebar-tools">
+      <li><a href="index.html" class="nav-link" data-tool="hub"><svg><use xlink:href="assets/icons.svg#icon-hub"></use></svg><span class="nav-tooltip">Studio Hub</span></a></li>
+      <li><a href="fluid-watercolor.html" class="nav-link" data-tool="fluid"><svg><use xlink:href="assets/icons.svg#icon-fluid"></use></svg><span class="nav-tooltip">Fluid Watercolor</span></a></li>
+      <li><a href="dynamic-ink.html" class="nav-link" data-tool="ink"><svg><use xlink:href="assets/icons.svg#icon-ink"></use></svg><span class="nav-tooltip">Dynamic Ink</span></a></li>
+      <li><a href="zen-garden.html" class="nav-link" data-tool="zen"><svg><use xlink:href="assets/icons.svg#icon-zen"></use></svg><span class="nav-tooltip">Zen Garden</span></a></li>
+      <li><a href="sumi-e.html" class="nav-link" data-tool="sumi"><svg><use xlink:href="assets/icons.svg#icon-sumi"></use></svg><span class="nav-tooltip">Sumi-e</span></a></li>
+      <li><a href="bleed-bloom.html" class="nav-link" data-tool="bleed"><svg><use xlink:href="assets/icons.svg#icon-bleed"></use></svg><span class="nav-tooltip">Bleed &amp; Bloom</span></a></li>
+      <li><a href="splatter.html" class="nav-link" data-tool="splatter"><svg><use xlink:href="assets/icons.svg#icon-splatter"></use></svg><span class="nav-tooltip">Splatter</span></a></li>
+      <li><a href="gradient-weaver.html" class="nav-link" data-tool="gradient"><svg><use xlink:href="assets/icons.svg#icon-gradient"></use></svg><span class="nav-tooltip">Gradient Weaver</span></a></li>
+    </ul>
+    <ul class="sidebar-bottom">
+      <li><a href="gallery.html" class="nav-link" data-tool="gallery"><svg><use xlink:href="assets/icons.svg#icon-gallery"></use></svg><span class="nav-tooltip">Gallery</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="gallery-page">
+    <header class="gallery-header">
+      <h1>Local Gallery</h1>
+      <p>Your curated collection of ink creations. Click a piece to remix it, or simply admire the view.</p>
+      <div style="display:flex;gap:10px;margin-top:12px;align-items:center">
+        <span id="work-count" style="font-family:var(--font-brush);font-size:0.82rem;color:var(--ink-light)">0 works</span>
+        <button class="ink-button" id="btn-inspire" style="font-size:0.78rem;padding:5px 12px">Random Inspiration</button>
+        <button class="ink-button ink-button-clear" id="btn-clear-all" style="font-size:0.78rem;padding:5px 12px">Clear Atelier</button>
+      </div>
+    </header>
+
+    <div class="gallery-grid" id="gallery-grid"></div>
+
+    <div class="gallery-empty" id="gallery-empty" style="display:none">
+      <svg><use xlink:href="assets/icons.svg#icon-gallery"></use></svg>
+      <p>The atelier is empty. Create something beautiful and save it here.</p>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

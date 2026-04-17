@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Ink Calligraphy — The Inkwell Atelier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inkwell-app">
+
+  <nav id="inkwell-nav"></nav>
+
+  <aside class="toolbar" role="complementary" aria-label="Calligraphy tools">
+    <div class="toolbar-section">
+      <div class="toolbar-title">Brush</div>
+      <div class="tool-slider">
+        <label>Min Width <span id="min-width-val">1</span></label>
+        <input type="range" id="min-width" min="1" max="12" value="1">
+      </div>
+      <div class="tool-slider">
+        <label>Max Width <span id="max-width-val">18</span></label>
+        <input type="range" id="max-width" min="4" max="60" value="18">
+      </div>
+      <div class="tool-slider">
+        <label>Opacity <span id="brush-opacity-val">1.0</span></label>
+        <input type="range" id="brush-opacity" min="10" max="100" value="100">
+      </div>
+      <div class="tool-slider">
+        <label>Smoothing <span id="smoothing-val">0.5</span></label>
+        <input type="range" id="smoothing" min="0" max="100" value="50">
+      </div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Ink Color</div>
+      <div class="color-palette" id="color-palette"></div>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Stroke Style</div>
+      <select id="stroke-style" style="width:100%;padding:4px 8px;border-radius:4px;border:1px solid var(--ink-wash);font-size:0.8rem;background:var(--card-bg);color:var(--fg);">
+        <option value="round">Round Cap</option>
+        <option value="butt">Flat Cap</option>
+        <option value="square">Square Cap</option>
+      </select>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Actions</div>
+      <button class="tool-btn tool-btn--secondary" id="btn-clear">✕ Clear Canvas</button>
+      <button class="tool-btn tool-btn--secondary" id="btn-undo">↩ Undo</button>
+    </div>
+  </aside>
+
+  <main class="canvas-area">
+    <canvas id="ink-canvas"></canvas>
+  </main>
+
+  <aside class="sidebar" role="complementary" aria-label="Calligraphy settings">
+    <div class="toolbar-section">
+      <div class="toolbar-title">Save</div>
+      <button class="tool-btn tool-btn--gold" id="btn-save">★ Save to Gallery</button>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Info</div>
+      <p class="text-muted">Draw slowly for thick, bold strokes. Move fast for thin, delicate lines. The brush responds to your speed and direction, just like a real calligraphy pen.</p>
+      <p class="text-muted" style="margin-top:0.5rem;">Paper roughness adds texture to your strokes. Switch paper type in the top navigation bar.</p>
+    </div>
+
+    <div class="toolbar-section">
+      <div class="toolbar-title">Statistics</div>
+      <p class="text-muted" id="stroke-count">0 strokes</p>
+      <p class="text-muted" id="point-count">0 points</p>
+    </div>
+  </aside>
+
+  <script src="js/common.js"></script>
+  <script src="js/dynamic-ink.js"></script>
+</body>
+</html>
